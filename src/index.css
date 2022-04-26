@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+a{
+  all: unset;
+  font-weight: bold;
+  cursor: pointer;
+}
+a:hover{
+  text-decoration: underline;
+}

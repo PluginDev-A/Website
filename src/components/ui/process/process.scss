@@ -1,0 +1,66 @@
+.process {
+  max-width: 90vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-block: 200px;
+}
+.process-chart {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .flow-line{
+    content: '';
+    width: 30px;
+    height: 5px;
+  }
+  .flow-line:last-child{
+    display: none;
+  }
+  .process-chart-box {
+    padding-inline: 30px;
+    width: auto;
+    max-width: 270px;
+    height: 400px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px 0px #00000020;
+    border: solid thin #ffffff20;
+
+    .pcb-title {
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      text-align: center;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 30px;
+      .pcb-icon{
+        font-size: 30px;
+        display: flex;
+      }
+    }
+  }
+}
+@media (max-width: 1700px) {
+    .process-chart{
+        flex-direction: column;
+    }
+    .flow-line{
+        width: 5px!important;
+        height: 30px!important;
+
+        
+      }
+    .process-chart-box{
+        max-width: 800px!important;
+        height: 300px!important;
+    }    
+}

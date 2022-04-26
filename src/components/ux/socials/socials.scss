@@ -1,0 +1,20 @@
+$phone-width: 768px;
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.8rem;
+  left: 1rem;
+  font-size: 1.4rem;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  a {
+    color: inherit;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .socials-stripe {
+    content: "";
+    width: 2px;
+    height: 2rem;
+  }
+}

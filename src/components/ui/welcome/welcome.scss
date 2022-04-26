@@ -1,0 +1,47 @@
+.welcome-msg {
+  max-width: 800px;
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  flex-wrap: wrap;
+  height: auto;
+  padding: 30px;
+}
+.barcode {
+  display: block;
+  background: black;
+  background-size: cover;
+  height: 100%;
+  margin-inline: 30px;
+  width: 50px;
+}
+
+.welcome {
+  max-width: 90vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  backdrop-filter: blur(15px);
+  padding: 30px 60px;
+  gap: 30px;
+  border-radius: 10px;
+
+  border: solid thin #ffffff30;
+}
+.welcome-svg {
+  max-width: 400px;
+}
+.svg-path {
+}
+#welcome-text {
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .welcome-svg {
+    display: none;
+  }
+  .welcome{
+    padding: 0px;
+  }
+}

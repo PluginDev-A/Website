@@ -1,0 +1,32 @@
+.nav {
+  overflow: hidden;
+  position: fixed;
+  margin: 0;
+  padding: 10px 0px;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    padding-right: 10px;
+  }
+}
+#nav-logo {
+  font-size: 1rem;
+  padding-left: 20px;
+  letter-spacing: 10px;
+}
+@media (max-width: 900px) {
+  #nav-logo {
+    display: none;
+  }
+  .nav {
+    justify-content: end;
+  }
+}
