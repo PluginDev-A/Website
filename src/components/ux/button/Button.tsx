@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./button.scss";
-import { themes, ThemeContext } from "../../theme/theme";
+import { ThemeContext } from "../../theme/theme";
 export default function Button(props: {
   invert: boolean;
   link: string | URL;

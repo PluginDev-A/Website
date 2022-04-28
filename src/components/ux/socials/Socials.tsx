@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { BsLinkedin, BsPersonCircle } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import "./socials.scss";

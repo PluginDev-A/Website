@@ -61,16 +61,16 @@ export default function Pricetable(props: {
       <div className="plan-price">€{props.price}</div>
       <div className="plan-info">
         <div>
-          <b>{props.pages}</b> paginas
+        pagina's <b>{props.pages}</b> 
         </div>
         <div>
-          <b>{props.revisions}</b> revisies
+        revisies: <b>{props.revisions}</b> 
         </div>
         <div>
-          <b>{props.delivery}</b> dagen levertijd
+          dagen levertijd:<b> {props.delivery}</b> 
         </div>
         <div>
-          <b><SiWhatsapp style={{color: theme.cta}}/> WhatsApp communicatie</b>
+          <SiWhatsapp style={{color: theme.cta}}/> <b>WhatsApp communicatie</b>
         </div>
         <Button invert={false} link={props.link} content={"verder"} />
       </div>

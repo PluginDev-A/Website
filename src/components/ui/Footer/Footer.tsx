@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="footer-content"></div>
       <div className="footer-content"></div>
       </div>
-      <div className="footer-credits" style={{background: theme.primary + '30'}}>©COPYRIGHT OF JAN AREND VAN WINSEN | Property of <a href="https://stckd.space">stckd.space</a></div>
+      <div className="footer-credits" style={{background: theme.primary + '20', color: theme.primary}}>©COPYRIGHT OF JAN AREND VAN WINSEN | Property of <a href="https://stckd.space">stckd.space</a></div>
     </div>
   );
 }

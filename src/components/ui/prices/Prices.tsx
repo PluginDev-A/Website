@@ -1,5 +1,4 @@
 import "./prices.scss";
-import React from "react";
 import Pricetable from "../../ux/pricetable/Pricetable";
 import Title from "../../ux/title/Title";
 
@@ -27,13 +26,13 @@ export default function Prices() {
       price: 849,
       pages: 15,
       revisions: 'unlimited',
-      delivery: 'variabele',
+      delivery: 'variabel',
     },
   ];
   return (
     <>
       <div className="prices">
-        <Title content={"Website pakketten"} size={4} />
+        <Title content={"Website pakketten"} size={3} id={''} />
         <div className="pricetables">
           {plans.map(
             ({ id, name, price, pages, revisions, delivery}) => {

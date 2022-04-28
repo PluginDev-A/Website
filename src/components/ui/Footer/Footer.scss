@@ -7,7 +7,7 @@
   overflow: hidden;
   gap: 20px;
   justify-content: space-around;
-  align-items:stretch;
+  align-items:end;
   .footer-container{
       width: 100%;
   }
@@ -18,11 +18,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items:baseline;
     gap: 30px;
   }
   .footer-credits{
-    opacity: 50%;
     text-align: left;
     width: 100%;
     padding: 10px;
@@ -31,6 +30,8 @@
 
 }
 .footer::before{
+  position: relative;
+    top: -35px;
   content: '';
   width: 100%;
   height: 0px;

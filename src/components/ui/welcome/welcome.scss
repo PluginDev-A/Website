@@ -3,6 +3,7 @@
   display: flex;
   gap: 20px;
   align-items: start;
+  justify-content: center;
   flex-wrap: wrap;
   height: auto;
   padding: 30px;
@@ -15,20 +16,18 @@
   margin-inline: 30px;
   width: 50px;
 }
-
+#welcome-title{
+text-align: center;
+}
 .welcome {
   max-width: 90vw;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  backdrop-filter: blur(15px);
   padding: 30px 60px;
   gap: 30px;
-  border-radius: 10px;
-
-  border: solid thin #ffffff30;
-}
+  border-radius: 10px;}
 .welcome-svg {
   max-width: 400px;
 }
@@ -36,6 +35,7 @@
 }
 #welcome-text {
   width: 100%;
+  text-align: center;
 }
 @media (max-width: 1200px) {
   .welcome-svg {

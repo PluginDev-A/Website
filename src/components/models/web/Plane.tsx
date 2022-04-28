@@ -1,29 +1,36 @@
 import {
   MeshDistortMaterial,
-  MeshWobbleMaterial,
   OrbitControls,
-  OrbitControlsProps,
   PerspectiveCamera,
-  PointMaterial,
-  Text,
 } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { useContext, useRef } from "react";
+import { useContext, useRef } from "react";
 import { ThemeContext } from "../../theme/theme";
 
 export default function Box() {
   const cameraRef = useRef<any>();
-  useFrame(() => {
-    var angle = window.scrollY / window.innerHeight;
-    cameraRef.current?.setPolarAngle(1.1 + angle / 10);
-  });
+  var mouseX = 1;
+  var mouseY = 1;
   console.log(cameraRef);
+  document.addEventListener("mousemove", (e) => {
+    mouseX = 1 - e.clientX / 5000;
+    mouseY = 1 - e.clientY / 5000;
+  });
+  useFrame(() => {
+    var angle = (window.scrollY / window.innerHeight) / 10;
+    cameraRef.current?.setPolarAngle(angle + mouseY);
+    cameraRef.current?.setAzimuthalAngle(mouseX);
+
+    // cameraRef.current?.setAzimuthalAngle(1.1 + angle);
+  });
   const theme = useContext(ThemeContext);
+  var rR =( Math.random() * 5);
   return (
     <>
       <PerspectiveCamera
+        rotation={[0, 0, 0]}
         makeDefault
-        position={[0, 4, 0]}
+        position={[0, 0, 4]}
         fov={100}
         key={undefined}
         attach={undefined}
@@ -118,26 +125,30 @@ export default function Box() {
         setLens={undefined}
       />
 
-      <OrbitControls ref={cameraRef} />
-      <mesh position={[0, 0, 0]} rotation={[-1.5, 0, 0]}>
-        <planeBufferGeometry args={[25, 10, 50, 50]} />
-        <meshLambertMaterial
+      <OrbitControls ref={cameraRef}/>
+
+      <mesh position={[0, 0, 0]} rotation={[rR, rR, rR]}>
+        {/* <planeBufferGeometry args={[25, 10, 100,70]} /> */}
+        <torusKnotBufferGeometry args={[2, 5, 10,10]} />
+        <MeshDistortMaterial
+          distort={1}
           attach="material"
+          speed={0.02}
           wireframe
-          distort={0}
-          color={theme.secondary}
+          color={"#fff"}
         />
       </mesh>
-
       <fog
         attach="fog"
         color={theme.primary}
-        near={1}
+        near={2}
         far={3.5}
         position={[0, 0, 0]}
       />
       <mesh position={[0, 0, 0]}>
-        <pointLight color={theme.cta} intensity={4} position={[0, 1, 0]} />
+        {/* <pointLight color={theme.cta} intensity={4} position={[0, 1, 0]} />
+        <ambientLight color={theme.cta} intensity={4} /> */}
+        <hemisphereLight args={[theme.secondary, theme.primary]} />
       </mesh>
     </>
   );
