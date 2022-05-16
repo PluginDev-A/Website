@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="apple-touch-icon" href="icons/apple-icon-180.png" />
-    <link rel="manifest" href="manifest.webmanifest">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-73T0C5DJCS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+      gtag("config", "G-73T0C5DJCS");
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5KHZ6TS");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Een goede website heeft voor veel bedrijven een doorslaggevende positie. STCKD webdesign helpt hierbij door inzicht te geven in het designproces, en dit te laten verlopen via Whatsapp voor een flitsende communicatie en service."
+    />
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <link
       rel="apple-touch-startup-image"
       href="icons/apple-splash-2048-2732.jpg"
       media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
     />
-    <meta
-      name="description"
-      content="Een goede website heeft voor veel bedrijven een doorslaggevende positie. Een website is een grote pluspunt op de weg naar succes."
-    />
+
     <meta name="keywords" content="HTML, CSS, Webdesign, Website" />
-  
+
     <link rel="icon" type="image/png" href="/src/icon.png" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover "
     />
-
-
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "http://schema.org",
+          "@type": "Article",
+          "name": "Waarom STCKD",
+          "articleSection": [
+            "Consultatie",
+            "Doel stellen",
+            "Designen",
+            "Evalueren"
+          ],
+          "articleBody": "De visie van STCKD is dat de wensen van de klant altijd centraal staan, maar dat de klant óók inzicht krijgt in het hele proces : <B>van design tot code.</B> Dit wordt bereikt door het gesprek te voeren over <B>WhatsApp</B>. Dit kanaal wordt dus van Consultatie tot Oplevering gebruikt om de beste én snelste service mogelijk te bieden!",
+          "url": "http://website.stckd.space/"
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "Article",
+          "name": "Wat STCKD biedt",
+          "articleSection": ["Wordpress", "Ecommerce", "Custom + app"],
+          "articleBody": "STCKD biedt 3 web design services. Elke service is gericht op een specifieke use-case, maar wat de klus ook mag zijn, één van de services zal een perfect fit zijn!<BR/>Kies gerust één van de onderstaande services en neem contact op met je wensen om binnen 24uur <B>vrijblijvend</B> een offerte te ontvangen!",
+          "url": "http://website.stckd.space/"
+        }
+      ]
+    </script>
     <title>STCKD Webdesign</title>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5KHZ6TS"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>

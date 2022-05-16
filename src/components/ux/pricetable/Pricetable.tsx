@@ -1,8 +1,10 @@
 import "./pricetable.scss";
 import React, { useContext } from "react";
-import { ThemeContext } from "../../theme/theme";
+import { ThemeContext } from "../../../theme/theme";
 import Button from "../../ux/button/Button";
-import {SiWhatsapp} from 'react-icons/si'
+import { BiChevronRightCircle } from "react-icons/bi";
+import Title from "../title/Title";
+import Paragraph from "../paragraph/Paragraph";
 
 export default function Pricetable(props: {
   title:
@@ -12,67 +14,51 @@ export default function Pricetable(props: {
     | React.ReactPortal
     | null
     | undefined;
-  price:
+  description:
     | number
     | React.ReactChild
     | React.ReactFragment
     | React.ReactPortal
     | null
     | undefined;
-  pages:
-    | number
-    | React.ReactChild
-    | React.ReactFragment
-    | React.ReactPortal
-    | null
-    | undefined;
-  revisions:
-    | string
-    | React.ReactChild
-    | React.ReactFragment
-    | React.ReactPortal
-    | null
-    | undefined;
-  delivery:
-    | string
-    | React.ReactChild
-    | React.ReactFragment
-    | React.ReactPortal
-    | null
-    | undefined;
-  ncnp:
-    | string
-    | React.ReactChild
-    | React.ReactFragment
-    | React.ReactPortal
-    | null
-    | undefined;
+  icon: any;
   link: string | URL;
 }) {
   const theme = useContext(ThemeContext);
   return (
-    <div className="pricetable" style={{background: theme.primary}}>
+    <div
+      className="pricetable"
+      style={{
+        background: theme.primary + 'da',
+        border: "solid thin " + theme.cta + "20",
+      }}
+    >
       <div
-        className="plan-title"
-        style={{ background: theme.secondary, color: theme.primary }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
       >
-        {props.title}
-      </div>
-      <div className="plan-price">€{props.price}</div>
-      <div className="plan-info">
-        <div>
-        pagina's <b>{props.pages}</b> 
+        <div className="plan-title" style={{ color: theme.text }}>
+          {props.icon}
+          <Title content={props.title} size={1.5} id={""} />
         </div>
-        <div>
-        revisies: <b>{props.revisions}</b> 
+
+        <div className="plan-description">
+          <Paragraph>{props.description}</Paragraph>
         </div>
-        <div>
-          dagen levertijd:<b> {props.delivery}</b> 
-        </div>
-        <div>
+        {/* <div>
           <SiWhatsapp style={{color: theme.cta}}/> <b>WhatsApp communicatie</b>
-        </div>
-        <Button invert={false} link={props.link} content={"verder"} />
+        </div> */}
+      </div>
+      <div className="plan-btn">
+        <Button
+          invert={false}
+          link={props.link}
+          content={"verder"}
+          id={"website-plan"}
+        />
       </div>
     </div>
   );

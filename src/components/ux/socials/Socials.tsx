@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { BsLinkedin, BsPersonCircle } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import "./socials.scss";
-import { ThemeContext } from "../../theme/theme";
+import { ThemeContext } from "../../../theme/theme";
 
 function Socials() {
   const theme = useContext(ThemeContext);

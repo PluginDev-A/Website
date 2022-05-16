@@ -1,23 +1,14 @@
 .welcome-msg {
   max-width: 800px;
   display: flex;
-  gap: 20px;
+  gap: 40px;
   align-items: start;
   justify-content: center;
   flex-wrap: wrap;
   height: auto;
-  padding: 30px;
 }
-.barcode {
-  display: block;
-  background: black;
-  background-size: cover;
-  height: 100%;
-  margin-inline: 30px;
-  width: 50px;
-}
-#welcome-title{
-text-align: center;
+#welcome-title {
+  text-align: center;
 }
 .welcome {
   max-width: 90vw;
@@ -25,9 +16,9 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 30px 60px;
-  gap: 30px;
-  border-radius: 10px;}
+  padding: 0px 60px;
+  border-radius: 10px;
+}
 .welcome-svg {
   max-width: 400px;
 }
@@ -41,7 +32,7 @@ text-align: center;
   .welcome-svg {
     display: none;
   }
-  .welcome{
+  .welcome {
     padding: 0px;
   }
 }

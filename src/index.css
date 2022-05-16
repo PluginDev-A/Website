@@ -3,14 +3,15 @@
 ::-webkit-scrollbar {
   display: none;
 }
+* {
+  box-sizing: border-box;
+}
 :root {
-  
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
 body {
   margin: 0;
-  
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,11 +21,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-a{
-  all: unset;
-  font-weight: bold;
+a {
+  color: unset;
+  text-decoration: unset;
   cursor: pointer;
 }
-a:hover{
-  text-decoration: underline;
+a:hover {
+  /* font-weight: bold; */
 }

@@ -3,4 +3,15 @@
   margin: 0;
   padding: 0;
   display: block;
+  text-transform: uppercase;
+
+}
+.gradient-title-h1{
+  text-transform: uppercase;
+	background: linear-gradient(30deg, #624fb8 0%, #8197c7 100%);
+  background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  margin: auto;
+  font-weight: bold;
 }

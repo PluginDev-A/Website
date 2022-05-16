@@ -1,76 +1,72 @@
-import {
-  useState,
-  useEffect,
-  Suspense,
-} from "react";
+import { useState } from "react";
+import { BsMoonStars, BsSun } from "react-icons/bs";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
+import { ThemeContext, themes } from "./theme/theme";
 import Nav from "./components/ui/nav/Nav";
-import Welcome from "./components/ui/welcome/Welcome";
-import Section from "./components/ux/section/Section";
-import Prices from "./components/ui/prices/Prices";
-import { themes, ThemeContext } from "./components/theme/theme";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import Footer from "./components/ui/Footer/Footer";
-import Process from "./components/ui/process/Process";
-import { Canvas } from "@react-three/fiber";
-import Web from "./components/models/web/Plane";
-import {
-  DepthOfField,
-  EffectComposer, Grid, Noise, Scanline, SMAA, SSAO, Vignette
-} from "@react-three/postprocessing";
+import Cases from "./Pages/Cases";
+import Rubiks from "./Pages/cases/rubiks/Rubiks";
+import E404 from "./Pages/E404";
+import Home from "./Pages/Home";
+import Skateboards from "./Pages/Skateboards/Skateboards";
+
 function App() {
   var getTheme;
-  localStorage.getItem("dark-mode") == "true"
-    ? (getTheme = themes.dark)
-    : (getTheme = themes.light);
+  //* check storage for dark mode boolean value
+  localStorage.getItem("light-mode") == "true"
+    ? (getTheme = themes.light)
+    : (getTheme = themes.sea);
+
+  //?initialize theme state
   const [themeMode, setThemeMode] = useState(getTheme);
-  document.body.style.background = themeMode.primary;
-  document.body.style.color = themeMode.text;
-  const paths = Array.from(
-    document.getElementsByClassName("svg-path") as HTMLCollectionOf<HTMLElement>
-  );
-  useEffect(() => {
-    for (let i = 0; i < paths.length; i++) {
-      paths[i].style.fill = themeMode.cta;
-    }
-  }, [themeMode]);
+
+  //* set main body elements to theme colors
+  themePainter(themeMode);
 
   return (
     <ThemeContext.Provider value={themeMode}>
-      <Nav>
-        <button
-          aria-label="light/dark mode"
-          style={{ color: themeMode.secondary }}
-          className={"mode-switch"}
-          onClick={() => {
-            themeMode == themes.light
-              ? localStorage.setItem("dark-mode", "true")
-              : localStorage.removeItem("dark-mode");
-            setThemeMode(
-              themeMode == themes.light ? themes.dark : themes.light
-            );
-          }}
-        >
-          {themeMode == themes.light ? <BsFillMoonFill /> : <BsFillSunFill />}
-        </button>
-      </Nav>
-      <Suspense fallback={'loading...'}>
-      <Canvas className={"canvas"} >
-        <ThemeContext.Provider value={themeMode}>
-          <EffectComposer multisampling={0} disableNormalPass>
-          <Noise opacity={0.3} />
-          <Vignette darkness={0.6} />
-          </EffectComposer>
-          <Web />
-        </ThemeContext.Provider>
-      </Canvas>
-      </Suspense >
-      <Section content={<Welcome />} />
-      <Section content={<Process />} />
-      <Section content={<Prices />} />
-      <Footer />
+      <Router>
+        <Nav linkDivider={"/"}>
+          <button
+            aria-label="light/dark mode"
+            style={{ color: themeMode.text, opacity: 0.8 }}
+            className={"mode-switch"}
+            onClick={() => {
+              themeMode == themes.sea
+                ? localStorage.setItem("light-mode", "true")
+                : localStorage.removeItem("light-mode");
+              setThemeMode(
+                themeMode == themes.light ? themes.sea : themes.light
+              );
+            }}
+          >
+            {themeMode == themes.light ? <BsMoonStars /> : <BsSun />}
+          </button>
+        </Nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cases/skateboards" element={<Skateboards />} />
+          <Route path="/cases/rubiks" element={<Rubiks />} />
+          <Route path="/cases" element={<Cases />} />
+          <Route path="*" element={<E404 />} />
+        </Routes>
+      </Router>
     </ThemeContext.Provider>
   );
 }
 
 export default App;
+function themePainter(themeMode: {
+  primary: string;
+  cta: string;
+  hvr: string;
+  secondary: string;
+  text: string;
+}) {
+  document.body.style.background = themeMode.primary;
+  document.body.style.color = themeMode.text;
+  const anchorTag = document.getElementsByTagName("a");
+  for (let index = 0; index < anchorTag.length; index++) {
+    anchorTag[index].style.color = themeMode.text;
+  }
+}

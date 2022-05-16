@@ -3,11 +3,9 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 80px;
   align-items: center;
   justify-content: space-evenly;
-  padding-block: 200px;
-  
 }
 .process-chart {
   display: flex;
@@ -15,24 +13,29 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  padding-block: 80px;
-
-  .flow-line{
-    content: '';
+  .flow-line {
+    content: "";
     width: 30px;
     height: 5px;
   }
-  .flow-line:last-child{
+
+  .flow-line:last-child {
     display: none;
   }
+  .flow-line:nth-child(6) {
+    background: none !important;
+    border-block: dashed 5px;
+    height: 30px !important;
+  }
+
   .process-chart-box {
     padding-inline: 30px;
-    width: auto;
-    max-width: 270px;
     height: 400px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #00000020;
-    border: solid thin #ffffff20;
+    width: 90%;
+    max-width: 300px;
+    border-radius: 3px;
+    font-size: larger;
+    box-shadow: 0px 0px px 0px #00000010;
 
     .pcb-title {
       width: 100%;
@@ -43,7 +46,7 @@
       align-items: center;
       justify-content: start;
       gap: 30px;
-      .pcb-icon{
+      .pcb-icon {
         font-size: 30px;
         display: flex;
       }
@@ -51,20 +54,20 @@
   }
 }
 @media (max-width: 1700px) {
-    .process-chart{
-        flex-direction: column;
-    }
-    .flow-line{
-        width: 5px!important;
-        height: 30px!important;
-
-        
-      }
-    .process-chart-box{
-        max-width: 800px!important;
-        height: 300px!important;
-    }    
-}
-#process-text{
-  max-width: 1000px;
+  .process-chart {
+    flex-direction: column;
+  }
+  .flow-line {
+    width: 5px !important;
+    height: 30px !important;
+  }
+  .flow-line:nth-child(6) {
+    background: none !important;
+    border-inline: dotted 5px;
+    border-block: none !important;
+    width: 30px !important;
+  }
+  .process-chart-box {
+    max-width: 90% !important;
+  }
 }

@@ -8,6 +8,15 @@ export default function Section(props: {
     | React.ReactPortal
     | null
     | undefined;
+  style?: any;
+  fullHeight?: boolean;
 }) {
-  return <div className="section">{props.content}</div>;
+
+  const style: Record<string, any> = {};
+  style.minHeight = props.fullHeight ? "100vh" : 'auto';
+  return (
+    <div className="section" style={style}>
+      {props.content}
+    </div>
+  );
 }

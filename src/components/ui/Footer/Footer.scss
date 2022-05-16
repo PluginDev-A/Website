@@ -1,38 +1,71 @@
 .footer {
   width: 100%;
   margin-top: 200px;
-  height: 300px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  gap: 20px;
-  justify-content: space-around;
-  align-items:end;
-  .footer-container{
-      width: 100%;
+  justify-content: center;
+  align-items: end;
+  .footer-container {
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    align-items: center;
+    justify-content: space-evenly;
   }
   .footer-content {
-    width: 30%;
-    height: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items:baseline;
-    gap: 30px;
+    align-items: center;
+    gap: 0px;
+    text-align: center;
+    opacity: 0.7;
   }
-  .footer-credits{
+  #f-c1 {
+    width: 10%;
+    min-width: 100px;
+    max-width: 150px;
+    opacity: 1;
+  }
+  #f-c2 {
+    width: 60%;
+    text-align: left;
+    min-width: 400px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #f-c4 {
+    width: 10%;
+    min-width: 150px;
+    opacity: 1;
+  }
+  .footer-credits {
     text-align: left;
     width: 100%;
     padding: 10px;
     position: inherit;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .privacy-statement {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
   }
-
 }
-.footer::before{
+.footer::before {
   position: relative;
-    top: -35px;
-  content: '';
+  content: "";
   width: 100%;
   height: 0px;
-box-shadow: 0px 0px 15px 5px #00000070;}
+  box-shadow: 0px 0px 10px 1px #00000040;
+}

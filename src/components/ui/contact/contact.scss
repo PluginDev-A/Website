@@ -1,0 +1,32 @@
+// *{
+//     border: solid thin black;
+// }
+.contact {
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  .contact-info {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    .contact-info-bar {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 3px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 1rem;
+
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+    .contact-info-bar:hover {
+      filter: brightness(1.1);
+    }
+  }
+}
