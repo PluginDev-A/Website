@@ -12,12 +12,7 @@ export default function Welcome() {
   return (
     <div className="welcome">
       <div className="welcome-msg">
-        <GradientTitle
-          content={"STCKD"}
-          size={9}
-          id={"welcome-title"}
-          
-        />
+        <GradientTitle content={"STCKD"} size={9} id={"welcome-title"} />
         <Paragraph id={"welcome-text"} size={1.3} centerText>
           ontwerpt en ontwikkelt samen met jou gebruiksvriendelijke en
           inspirerende websites met nadruk op een clean en modern uiterlijk,

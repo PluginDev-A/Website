@@ -10,7 +10,7 @@ export const themes = {
   },
   light: {
     primary: "#FFFFFF",
-    cta: "#602cff",
+    cta: "#500cff",
     hvr: "#ff818b",
     secondary: "#272932",
     text: "#1C0221",

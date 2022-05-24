@@ -2,7 +2,6 @@ import { Environment, Html, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Bloom, DepthOfField, EffectComposer, Glitch } from "@react-three/postprocessing";
 import { Suspense, useContext } from "react";
-import Skateboard from "../../models/custom/Skateboard";
 import { ThemeContext } from "../../theme/theme";
 import Section from "../../components/ux/section/Section";
 import BoardContent from "./BoardContent";

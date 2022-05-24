@@ -18,8 +18,6 @@ export default function Title(props: {
 
 
   return (
-    <h1 className="title-h1" style={titleStyle} id={props.id}>
-      {props.content}
-    </h1>
+    <h1 className="title-h1" style={titleStyle} id={props.id}>{props.content}</h1>
   );
 }
